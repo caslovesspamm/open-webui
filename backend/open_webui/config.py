@@ -2115,6 +2115,12 @@ ENABLE_IMAGE_PROMPT_GENERATION = PersistentConfig(
     os.environ.get("ENABLE_IMAGE_PROMPT_GENERATION", "true").lower() == "true",
 )
 
+ENABLE_IMAGE_BUTTON = PersistentConfig(
+    "ENABLE_IMAGE_BUTTON",
+    "image_generation.button.enable",
+    os.environ.get("ENABLE_IMAGE_BUTTON", "true").lower() == "true",
+)
+
 AUTOMATIC1111_BASE_URL = PersistentConfig(
     "AUTOMATIC1111_BASE_URL",
     "image_generation.automatic1111.base_url",

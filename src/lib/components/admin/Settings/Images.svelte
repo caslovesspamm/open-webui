@@ -109,17 +109,10 @@
 			.catch((error) => {
 				toast.error(`${error}`);
 				return null;
-			})
-			.catch((error) => {
-				toast.error(`${error}`);
-				return null;
 			});
 
 		if (res) {
 			config = res;
-		}
-
-		if (config.enabled) {
 			backendConfig.set(await getBackendConfig());
 			getModels();
 		}
@@ -279,6 +272,12 @@
 				</div>
 
 				{#if config.enabled}
+					<div class=" py-1 flex w-full justify-between">
+						<div class=" self-center text-xs font-medium">{$i18n.t('Show Image Button')}</div>
+						<div class="px-1">
+							<Switch bind:state={config.enable_image_button} />
+						</div>
+					</div>
 					<div class=" py-1 flex w-full justify-between">
 						<div class=" self-center text-xs font-medium">{$i18n.t('Image Prompt Generation')}</div>
 						<div class="px-1">
